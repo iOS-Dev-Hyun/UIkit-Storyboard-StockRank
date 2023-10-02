@@ -2,12 +2,12 @@
 //  StockRankUITestsLaunchTests.swift
 //  StockRankUITests
 //
-//  Created by HyunSoo on 2023/10/03.
+//  Created by joonwon lee on 2022/04/19.
 //
 
 import XCTest
 
-final class StockRankUITestsLaunchTests: XCTestCase {
+class StockRankUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

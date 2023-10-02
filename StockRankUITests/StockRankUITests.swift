@@ -2,12 +2,12 @@
 //  StockRankUITests.swift
 //  StockRankUITests
 //
-//  Created by HyunSoo on 2023/10/03.
+//  Created by joonwon lee on 2022/04/19.
 //
 
 import XCTest
 
-final class StockRankUITests: XCTestCase {
+class StockRankUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

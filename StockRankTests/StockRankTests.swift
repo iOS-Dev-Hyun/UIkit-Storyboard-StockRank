@@ -2,13 +2,13 @@
 //  StockRankTests.swift
 //  StockRankTests
 //
-//  Created by HyunSoo on 2023/10/03.
+//  Created by joonwon lee on 2022/04/19.
 //
 
 import XCTest
 @testable import StockRank
 
-final class StockRankTests: XCTestCase {
+class StockRankTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
