@@ -1,29 +1,43 @@
-//
-//  StockRankViewController.swift
-//  StockRank
-//
-//  Created by HyunSoo on 2023/10/03.
-//
+
 
 import UIKit
 
-class StockRankViewController: UIViewController {
-
+class StockRankViewController: UIViewController, UICollectionViewDelegate {
+    
+    let stockList: [StockModel] = StockModel.list
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Data -- 어떤 데이터
+        //presentation -- 셀을 어떻게 표현?
+        //Layout - 셀들 레이아웃 어떻게?
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension StockRankViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
+        stockList.count
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StockRankCollectionViewCell", for: indexPath) as? StockRankCollectionViewCell else {
+            return UICollectionViewCell()
+        }
+        
+        let stock = stockList[indexPath.item]
+        cell.configure(stock)
+        return cell
     }
-    */
+}
 
+extension StockRankViewController:UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 80)
+    }
 }
